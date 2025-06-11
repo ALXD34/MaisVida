@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaisVida - Planos de Saúde para Você e Sua Família</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img1/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="navbar-brand">MaisVida</a>
+
+            <!-- O checkbox invisível para controlar o menu (sem JS) -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <!-- O ícone do hamburguer (label para o checkbox) -->
+            <label for="menu-toggle" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#planos-de-saude">Planos de Saúde</a></li>
+                <li><a href="#orcamento" class="btn btn-primary">Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Seu Bem-Estar, Nossa Prioridade.</h1>
+                <p>Encontre o plano de saúde ideal para você e sua família, com a segurança e o cuidado que você merece.</p>
+                <a href="#orcamento" class="btn btn-secondary">Solicite um Orçamento Agora</a>
+               
+            </div>
+        </section>
+
+        <section id="quem-somos" class="section">
+            <h2>Quem Somos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Na <strong>MaisVida</strong>, somos especialistas em conectar pessoas aos melhores planos de saúde do mercado. Nossa missão é simplificar a sua escolha, oferecendo consultoria personalizada e as soluções mais adequadas às suas necessidades e ao seu orçamento.</p>
+                    <p>Com anos de experiência e um time dedicado, garantimos transparência e suporte em cada etapa, desde a cotação até a contratação e o pós-venda. Priorizamos sua saúde e tranquilidade, ajudando você a cuidar do que realmente importa.</p>
+                </div>
+                <div class="img-container.retangulo">
+                    <img src="img1/consultoria-empresarial-fia-como-implantar.jpg" alt="Time MaisVida consultando um plano de saúde" class="image-placeholder about-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="planos-de-saude" class="section">
+            <h2>Nossos Planos de Saúde</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="img-container.circulo">
+                        <img src="img1/como-adquirir-um-plano-de-saude-individual-Sami-Saude.jpg" alt="Ícone de plano individual">
+                    </div>
+                    <h3>Plano Individual</h3>
+                    <p>Cobertura abrangente para sua saúde, adaptado às suas necessidades pessoais.</p>
+                    <ul>
+                        <li>Consultas e Exames</li>
+                        <li>Internações e Cirurgias</li>
+                        <li>Atendimento de Urgência/Emergência</li>
+                        <li>Rede Credenciada Nacional</li>
+                    </ul>
+                    <a href="#orcamento" class="btn btn-small">Saiba Mais</a>
+                </div>
+
+                <div class="plan-card">
+                    <div class="img-container.circulo">
+                        <img src="img1/plano-de-saude-individual-e-familiar-1024x683.jpg" alt="Ícone de plano familiar">
+                    </div>
+                    <h3>Plano Familiar</h3>
+                    <p>Cuidado completo para toda a sua família, com benefícios exclusivos.</p>
+                    <ul>
+                        <li>Descontos Progressivos</li>
+                        <li>Dependentes Inclusos</li>
+                        <li>Programas de Prevenção</li>
+                        <li>Atendimento Personalizado</li>
+                    </ul>
+                    <a href="#orcamento" class="btn btn-small">Saiba Mais</a>
+                </div>
+
+                <div class="plan-card">
+                    <div class="img-container.circulo">
+                        <img src="img1/5cf6e0667ce14f07283ea384_Segmento-de-gestão-de-saúde-empresarial-deve-crescer.jpg" alt="Ícone de plano empresarial">
+                    </div>
+                    <h3>Plano Empresarial</h3>
+                    <p>As melhores soluções em saúde para sua empresa e seus colaboradores.</p>
+                    <ul>
+                        <li>Ampla Rede Hospitalar</li>
+                        <li>Condições Especiais</li>
+                        <li>Flexibilidade de Cobertura</li>
+                        <li>Saúde e Bem-estar Corporativo</li>
+                    </ul>
+                    <a href="#orcamento" class="btn btn-small">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="orcamento" class="section">
+            <h2>Solicite seu Orçamento Personalizado</h2>
+            <div class="form-container">
+                <div class="image-placeholder form-image">
+                    <img src="img1/contratacao-de-plano-de-saude-empresarial-1024x682.webp" alt="Pessoa preenchendo formulário de orçamento">
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone (Whatsapp):</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" placeholder="(DD) XXXXX-XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plan-type">Tipo de Plano de Interesse:</label>
+                        <select id="plan-type" name="plan-type">
+                            <option value="individual">Individual</option>
+                            <option value="familiar">Familiar</option>
+                            <option value="empresarial">Empresarial</option>
+                            <option value="outro">Não tenho certeza</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem / Dúvidas:</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Orçamento</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 MaisVida - Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Trabalhe Conosco</a>
+            </div>
+            <div class="social-media">
+                <!-- Ícones de redes sociais (simulados) -->
+                <a href="#" aria-label="Facebook"><span class="social-icon">F</span></a>
+                <a href="#" aria-label="Instagram"><span class="social-icon">I</span></a>
+                <a href="#" aria-label="WhatsApp"><span class="social-icon">W</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
