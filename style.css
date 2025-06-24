@@ -1,13 +1,14 @@
 /* Variáveis CSS para cores */
 :root {
     --primary-color: #2f8ef3; /* Azul vibrante, cor principal */
-    --secondary-color: #28a745; /* Verde para sucesso/cuidado */
+    --secondary-color: #178d3e; /* Verde para sucesso/cuidado */
     --accent-color: #ff8c00; /* Laranja para destaque (botão Orçamento) */
     --text-dark: #333;
     --text-light: #f8f8f8;
     --bg-light: #ffffff;
     --bg-gray: #f2f2f2;
     --border-color: #ddd;
+    --tercerary-color: #003f91; /* Azul escuro para botões terciários */
 }
 
 /* Reset básico e tipografia */
@@ -108,6 +109,28 @@ p {
 }
 
 .btn-secondary:hover {
+    background-color: #1a69b3; 
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9em;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-small:hover {
+    background-color: #104492;
+    transform: translateY(-1px);
+}
+
+.btn-tercerary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-tercerary:hover {
     background-color: #003f91; 
     transform: translateY(-2px);
 }
@@ -460,7 +483,7 @@ header {
     padding: 15px;
     font-size: 1.1em;
     border-radius: 8px; /* Botão do formulário com bordas menos arredondadas */
-}
+} 
 
 /* Footer */
 footer {

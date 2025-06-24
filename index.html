@@ -23,8 +23,9 @@
             </label>
 
             <ul class="nav-links">
-                <li><a href="#quem-somos">Quem Somos</a></li>
-                <li><a href="#planos-de-saude">Planos de Saúde</a></li>
+                <li><a href="#quem-somos" class="btn btn-tercerary">Quem Somos</a></li>
+                <li><a href="#planos-de-saude" class="btn btn-tercerary">Planos de Saúde</a></li>
+                <li><a href="#calcule seu imc" class="btn btn-primary">Calculadora IMC</a></li>
                 <li><a href="#orcamento" class="btn btn-primary">Orçamento</a></li>
             </ul>
         </nav>
@@ -102,14 +103,104 @@
                 </div>
             </div>
         </section>
+        
+        
+       <section id="calcule seu imc" class="section">
+        <div class="form-container">
+    <h2>Comparador de Planos de Saúde - 
+            Operadora A x B</h2>
 
+    <form id="planForm" class="contact-form">
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+        </div>
+        <div class="form-group">
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" step="0.1" required>
+        </div>
+        <div class="form-group">
+            <label for="altura">Altura (m):</label>
+            <input type="number" id="altura" name="altura" step="0.01" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular Comparativo</button>
+    </form>
+
+    <div id="resultado" class="result"></div>
+</div>
+    <script>
+        document.getElementById('planForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const idade = parseFloat(document.getElementById('idade').value);
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const imc = peso / (altura * altura);
+
+            let fator = 1;
+            if (imc < 18.5) fator = 10;
+            else if (imc >= 18.5 && imc < 25) fator = 1;
+            else if (imc >= 25 && imc < 30) fator = 6;
+            else if (imc >= 30 && imc < 35) fator = 10;
+            else if (imc >= 35 && imc < 40) fator = 20;
+            else if (imc >= 40) fator = 30;
+
+            const a_basico = 100 + (idade * 10 * (imc / 10));
+            const a_standard = (150 + (idade * 15)) * (imc / 10);
+            const a_premium = (200 - (imc * 10) + (idade * 20)) * (imc / 10);
+
+            const b_basico = 100 + (fator * 10 * (imc / 10));
+            const b_standard = (150 + (fator * 15)) * (imc / 10);
+            const b_premium = (200 - (imc * 10) + (fator * 20)) * (imc / 10);
+
+            const melhorBasico = a_basico < b_basico ? "Operadora A" : "Operadora B";
+            const melhorStandard = a_standard < b_standard ? "Operadora A" : "Operadora B";
+            const melhorPremium = a_premium < b_premium ? "Operadora A" : "Operadora B";
+
+            document.getElementById('resultado').innerHTML = `
+                <h3>Resultado:</h3>
+                <p>IMC: ${imc.toFixed(2)}</p>
+                <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                    <tr>
+                        <th style="border:1px solid #ccc; padding:8px;">Plano</th>
+                        <th style="border:1px solid #ccc; padding:8px;">Operadora A (R$)</th>
+                        <th style="border:1px solid #ccc; padding:8px;">Operadora B (R$)</th>
+                        <th style="border:1px solid #ccc; padding:8px;">Mais vantajoso</th>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Básico</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${a_basico.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${b_basico.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${melhorBasico}</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Standard</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${a_standard.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${b_standard.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${melhorStandard}</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Premium</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${a_premium.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${b_premium.toFixed(2)}</td>
+                        <td style="border:1px solid #ccc; padding:8px;">${melhorPremium}</td>
+                    </tr>
+                </table>
+            `;
+        });
+    </script>
+</section>
+
+           
+          
+        
         <section id="orcamento" class="section">
             <h2>Solicite seu Orçamento Personalizado</h2>
             <div class="form-container">
                 <div class="image-placeholder form-image">
                     <img src="img1/contratacao-de-plano-de-saude-empresarial-1024x682.webp" alt="Pessoa preenchendo formulário de orçamento">
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="MaisVida-Form.php" method="POST">
                     <div class="form-group">
                         <label for="name">Nome Completo:</label>
                         <input type="text" id="name" name="name" required>
@@ -143,7 +234,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 MaisVida - Todos os direitos reservados.</p>
+            <p>&copy; 2025 MaisVida - Todos os direitos reservados.</p>
             <div class="footer-links">
                 <a href="#">Política de Privacidade</a>
                 <a href="#">Termos de Uso</a>
